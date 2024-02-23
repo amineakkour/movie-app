@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{   
+    margin: 0 auto;
+    max-width: 1500px;
+    min-height: 100vh;
+    background-color: #14174aeb;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+}
+
+body::before, body::after{
+    position: absolute;
+    content: "f";
+    width: 50px;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+
+body::after{
+    background: linear-gradient(to left, #14174abe, transparent);
+    /* background: #14174abe; */
+    right: -25px;
+}
+
+body::before{
+    left: -25px;
+    background: linear-gradient(to right, #14174abe, transparent);
+}
+
+    
+header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 80px;
+    background-color: #0E1140;
+    padding: 0 10px;
+    position: sticky;
+    box-shadow: 0 1px 10px rgba(255, 255, 255, 0.2);
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+header form{
+    position: relative;
+}
+
+header form .magnifying{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+}
+
+header input{
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    width: 250px;
+    padding: 15px 10px;
+    background-color: white;
+    font-size: 15px;
+    padding-right: 40px;
+    font-weight: bold;
+    font-family: inherit;
+
+}
+
+header input:focus{
+    box-shadow: 0px 0px 10px black,0px 0px 20px rgba(0, 0, 0, 0.192) 
+}
+
+main{
+    font-family: sans-serif;
+    display: flex;
+    margin: 0 10px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+main .movie{
+    padding: 10px;
+    width: 250px;
+    color: white;
+    border-radius: 5px;
+    background-color: #0E1140;
+    position: relative;
+    overflow:hidden;
+    cursor: pointer;
+}
+
+main .movie .poster{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .movie img{
+    height: 200px;
+    width: auto;
+}
+
+main .movie .infos{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie .infos .rate{
+    padding: 5px;
+    border-radius: 5px;
+    background: #14174aeb;
+}
+
+
+.overview{
+    position: absolute;
+    height: 200px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 15px;
+    transform: translateY(200px);
+    transition: .4s transform;
+    transition-delay: .2s;
+    overflow: auto;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+
+@media screen and (min-width: 2000px) {
+    body::before, body::after{
+        display: block;
+    }
+}
